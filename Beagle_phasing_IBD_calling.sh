@@ -15,7 +15,7 @@ module load plink/160607
 module load java
 ###
 #Author:ZhouWu
-#Usage: raw vcf file; 
+#Required files: raw vcf file; reference fasta file; plink format map files(or follow step3 to make one) 
 #step1: change the missing value notes in vcf files
 #step2: filter the vcf based on few criteria
 #step3: make plink format map
@@ -30,7 +30,6 @@ ref_fa="/lustre/nobackup/WUR/ABGC/shared/public_data_store/genomes/chicken/Ensem
 for chr in `cat candidate_chr` ;do \ #or chr=""
 mkdir -p ${chr} && cd $_
 vcf="/lustre/backup/WUR/ABGC/wu090/Backup/Bantam_gal6_vcf/Multi_vcf/gal6_CHR${chr}.rnm.vcf.gz"
-
 ###-----------------------------###
 ### --- STEP1: REMEMBER TO MODIFY THE MISSING GENOTYPE NOTATION FROM . TO ./.
 zcat ${vcf}| perl -pe "s/\s\.:/\t.\/.:/g"| bgzip -c >./gal6_CHR${chr}.rnm.beagle.vcf.gz
