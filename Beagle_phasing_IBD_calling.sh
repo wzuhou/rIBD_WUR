@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --time=2-00:10:00
+#SBATCH --time=2:10:00
 #SBATCH --mail-user=zhou.wu@wur.nl
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -14,7 +14,7 @@ module load samtools
 module load plink/160607
 module load java
 ###
-#Author:ZhouWu
+#Author:ZhouWu (2019)
 #Required files: raw vcf file; reference fasta file; plink format map files(or follow step3 to make one) 
 #step1: change the missing value notes in vcf files
 #step2: filter the vcf based on few criteria
