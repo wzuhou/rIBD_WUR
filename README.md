@@ -5,7 +5,9 @@ test
 - Codes in this repository
 
 `Beagle_phasing_IBD_calling.sh` This code shows an example of using Beagle to perform the **phasing** and IBD calling
+
 `rIBD_pd.py` This code shows an example of using the python code to compute the **rIBD**
+
 `plot_rIBD.R` This code shows an example of plotting the outcome of the pyton codes **this code is to be added to the repository**
 
 -Steps in the code
