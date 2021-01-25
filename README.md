@@ -17,7 +17,7 @@
 
 `rIBD_pd.py` This code shows an example of using the python code to compute the **rIBD**
 
-`plot_rIBD.R` This code shows an example of plotting the outcome of the pyton codes **this code is to be added to the repository**
+`plot_rIBD.R` This code shows an example of **plotting** the outcome of the pyton codes 
 
 ## rIBD between population A,B, and C
 <p align="center">
