@@ -24,6 +24,9 @@
 - R package: ggplot2
 
 ### Example
+```bash
+python rIBD.py -i Example/LOD3_gal6_Merged.rnm.beagle.vcf.gz.10k.filtered.recode.phased_B5.vcf.gz.ibd -A Example/List.DrFwB -B Example/List.DB -C Example/List.DrFw -o rIBD_DrFwB_DB_DrFw -W 20000 -S 10000 -M 1
+```
 
 Example breeds:DrFw, DrFwB, DB
 - Input files:
@@ -33,8 +36,5 @@ Example breeds:DrFw, DrFwB, DB
 - Parameters
 1. Using the method option: 1, which corresponds to *Bosse, M. et al.(2014)*
 4. Window size: 20,000 bp; step size: 10,000 bp
-
-`python rIBD.py -i Example/LOD3_gal6_Merged.rnm.beagle.vcf.gz.10k.filtered.recode.phased_B5.vcf.gz.ibd -A Example/List.DrFwB -B Example/List.DB -C Example/List.DrFw -o rIBD_DrFwB_DB_DrFw -W 20000 -S 10000 -M 1` 
-
 
 ### Steps in the code
