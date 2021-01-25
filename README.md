@@ -10,8 +10,10 @@ test
 
 `plot_rIBD.R` This code shows an example of plotting the outcome of the pyton codes **this code is to be added to the repository**
 
--Steps in the code
-
+### rIBD between population A,B, and C
+<p align="center">
+  <img src="https://github.com/wzuhou/rIBD_WUR/blob/main/Github_rIBD.tif">
+</p>
 ## How to use it?
 ### Prepare your input and env.
 Example breeds:DrFw, DrFwB, DB
@@ -21,4 +23,7 @@ Example breeds:DrFw, DrFwB, DB
 
 `python rIBD.py -i example/LOD3_gal6_Merged.rnm.beagle.vcf.gz.10k.filtered.recode.phased_B5.vcf.gz.ibd -A example/Tibetan.list -B example/Zebu.list -O example/Yak.list -o Tibetan-Zebu-Yak.Chr28 -W 20000 -S 10000`
 
+
 ## Example
+
+## Steps in the code
