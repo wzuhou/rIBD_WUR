@@ -56,11 +56,10 @@ Example breeds:DrFw, DrFwB, DB
 ```bash
 Rscript plot_rIBD.R rIBD_DrFwB_DB_DrFw 1 34199000 34363000
 ```
+
 ## arguments:
-- [1] Input rIBD file (Whole genome output or a songle chromosome? Both would be possible. Example: rIBD_DrFwB_DB_DrFw )
-- [2] Chromosome of interest
-- [3] Start position for candidate region(in bp)
-- [4] End position for candidate region(in bp)
-- Output plots: WG_RIBD.pdf+ Chr_RIBD.pdf
-
-
+[1] Input rIBD file (Example: rIBD_DrFwB_DB_DrFw. NB: Whole genome scale output or a songle chromosome? Both would be possible.)
+[2] Chromosome of interest
+[3] Start position for candidate region(in bp)
+[4] End position for candidate region(in bp)
+Output files are plots: Chr_RIBD.pdf  +  WG_RIBD.pdf (Only when the input contains more than two chromosomes) 
