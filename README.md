@@ -3,6 +3,12 @@
 **Authors: Langqing Liu & Zhou Wu**
 
 ## What does this repository do?
+- Calcuate the relative haplotype sharing (rIBD) between three populations(A, B and C)
+
+> Normalized IBD for one pig group: nIBD=cIBD/tIBD (where cIBD=count of all haplotypes IBD between A and one group(B or C) and tIBD=total pairwise comparisons between A and one  group).
+> rIBD between two pig groups: rIBD=nIBD_<sub>AB</sub>–nIBD_<sub>AC</sub.
+> *Adopted from [Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392)*
+
 - Codes in this repository
 
 `Beagle_phasing_IBD_calling.sh` This code shows an example of using Beagle to perform the **phasing** and IBD calling
@@ -38,3 +44,7 @@ Example breeds:DrFw, DrFwB, DB
 4. Window size: 20,000 bp; step size: 10,000 bp
 
 ### Steps in the code
+### Method options
+
+- Method `1` corresponds to *[Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392)*
+- Method '2' computed the weighted cIBD in each window 
