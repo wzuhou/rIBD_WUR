@@ -52,13 +52,15 @@ Example breeds:DrFw, DrFwB, DB
 - Method `2` computed the weighted cIBD in each window 
 
 ## Visualization of the result
+### Example to plot
 ```bash
-Rscript plot_rIBD.R
+Rscript plot_rIBD.R rIBD_DrFwB_DB_DrFw 1 34199000 34363000
 ```
 ## arguments:
-## [1] Directory containing input file
-## [2] n_all: number of total individuals
-## [3] gemma out put:eg gemma_kin_60k.assoc.txt/ gemma_kin.assoc.txt
-## Output file is plot: gwas_gemma.png+sorted assoc file
+- [1] Input rIBD file (example: rIBD_DrFwB_DB_DrFw)
+- [2] Chromosome of interest
+- [3] Start position for candidate region(in bp)
+- [4] End position for candidate region(in bp)
+- Output plots: WG_RIBD.pdf+ Chr_RIBD.pdf
 
 
