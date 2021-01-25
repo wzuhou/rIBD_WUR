@@ -18,7 +18,7 @@
 
 ## How to use it? Prepare your input and env.
 ### Dependence: 
-- python > v3 (Tested in v3.8.5)
+- python >= v3 (Tested in v3.8.5)
 - python modules: pandas, pybedtools
 - R 
 - R package: ggplot2
