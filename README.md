@@ -12,7 +12,7 @@ test
 
 ### rIBD between population A,B, and C
 <p align="center">
-  <img src="https://github.com/wzuhou/rIBD_WUR/blob/main/Github_rIBD.tif">
+  <img src="https://github.com/wzuhou/rIBD_WUR/blob/main/Github_rIBD.png">
 </p>
 ## How to use it?
 ### Prepare your input and env.
