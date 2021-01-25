@@ -68,4 +68,4 @@ Rscript plot_rIBD.R rIBD_DrFwB_DB_DrFw 1 34199000 34363000
 3. Start position for region to be highlighted (in bp)
 4. End position for region to be highlighted (in bp)
 
-Output files is plot: Chr_RIBD.pdf  + *Optional* WG_RIBD.pdf (Only when the input contains more than two chromosomes) 
+Output files is plot: Chr_RIBD.pdf   (*Optional*) + WG_RIBD.pdf (Only when the input contains more than two chromosomes) 
