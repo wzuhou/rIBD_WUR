@@ -49,4 +49,16 @@ Example breeds:DrFw, DrFwB, DB
 ### Method options
 
 - Method `1` corresponds to *[Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392)*
-- Method '2' computed the weighted cIBD in each window 
+- Method `2` computed the weighted cIBD in each window 
+
+## Visualization of the result
+```bash
+Rscript plot_rIBD.R
+```
+## arguments:
+## [1] Directory containing input file
+## [2] n_all: number of total individuals
+## [3] gemma out put:eg gemma_kin_60k.assoc.txt/ gemma_kin.assoc.txt
+## Output file is plot: gwas_gemma.png+sorted assoc file
+
+
