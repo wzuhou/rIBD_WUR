@@ -5,7 +5,7 @@
 ## What does this repository do?
 - Calcuate the relative haplotype sharing (rIBD) between three populations(A, B and C)
 
-> Normalized IBD for one pig group: nIBD=cIBD/tIBD (where cIBD=count of all haplotypes IBD between A and one group(B or C) and tIBD=total pairwise comparisons between A and one  group).
+> Normalized IBD for one  group: nIBD=cIBD/tIBD (where cIBD=count of all haplotypes IBD between A and one group (B or C) and tIBD=total pairwise comparisons between A and one  group).
 >
 > rIBD between two pig groups: rIBD=nIBD<sub>AB</sub> – nIBD<sub>AC</sub>
 >
