@@ -19,9 +19,9 @@
 ## How to use it? Prepare your input and env.
 ### Dependence: 
 - python > v3 (Tested in v3.8.5)
-- python module: pandas, pybedtools
+- python modules: pandas, pybedtools
 - R 
-- R packages: ggplot2
+- R package: ggplot2
 
 ### Example
 
