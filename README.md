@@ -55,13 +55,17 @@ Example breeds:DrFw, DrFwB, DB
 
 ## Visualization of the result
 ### Example to plot
+
+Here we highlight the candidate region on Chromosome 1: 34199000-34363000
+
 ```bash
 Rscript plot_rIBD.R rIBD_DrFwB_DB_DrFw 1 34199000 34363000
 ```
 
 **Arguments:**
-1. Input rIBD file (Example: rIBD_DrFwB_DB_DrFw. NB: Whole genome scale output or a songle chromosome? Both would be possible.)
+1. Input rIBD file (Example: rIBD_DrFwB_DB_DrFw. **NB**: Whole genome output or a songle chromosome output? Both would be possible.)
 2. Chromosome of interest
-3. Start position for candidate region(in bp)
-4. End position for candidate region(in bp)
-5. Output files are plots: Chr_RIBD.pdf  +  WG_RIBD.pdf (Only when the input contains more than two chromosomes) 
+3. Start position for region to be highlighted (in bp)
+4. End position for region to be highlighted (in bp)
+
+Output files is plot: Chr_RIBD.pdf  + *Optional* WG_RIBD.pdf (Only when the input contains more than two chromosomes) 
