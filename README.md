@@ -34,7 +34,7 @@ Example breeds:DrFw, DrFwB, DB
 2. Three list files(A,B,C): A: List.DrFwB, B: List.DB , C: List.DrFw
 
 - Parameters
-1. Using the method option: 1, which corresponds to *Bosse, M. et al.(2014)*
+1. Using the method option: 1, which corresponds to *[Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392#citeas)*
 4. Window size: 20,000 bp; step size: 10,000 bp
 
 ### Steps in the code
