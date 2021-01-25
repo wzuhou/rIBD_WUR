@@ -29,7 +29,7 @@
 - python >= v3 (Tested in v3.8.5)
 - python modules: pandas, pybedtools
 - R 
-- R package: ggplot2
+- R package: ggplot2, gridExtra
 
 ### Example
 ```bash
@@ -51,15 +51,17 @@ Example breeds:DrFw, DrFwB, DB
 - Method `1` corresponds to *[Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392)*
 - Method `2` computed the weighted cIBD in each window 
 
+---
+
 ## Visualization of the result
 ### Example to plot
 ```bash
 Rscript plot_rIBD.R rIBD_DrFwB_DB_DrFw 1 34199000 34363000
 ```
 
-## arguments:
-[1] Input rIBD file (Example: rIBD_DrFwB_DB_DrFw. NB: Whole genome scale output or a songle chromosome? Both would be possible.)
-[2] Chromosome of interest
-[3] Start position for candidate region(in bp)
-[4] End position for candidate region(in bp)
-Output files are plots: Chr_RIBD.pdf  +  WG_RIBD.pdf (Only when the input contains more than two chromosomes) 
+**Arguments:**
+1. Input rIBD file (Example: rIBD_DrFwB_DB_DrFw. NB: Whole genome scale output or a songle chromosome? Both would be possible.)
+2. Chromosome of interest
+3. Start position for candidate region(in bp)
+4. End position for candidate region(in bp)
+5. Output files are plots: Chr_RIBD.pdf  +  WG_RIBD.pdf (Only when the input contains more than two chromosomes) 
