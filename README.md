@@ -46,7 +46,7 @@ Example breeds:DrFw, DrFwB, DB
 1. Window size (-W): 20,000 bp; 
 2. Step size (-S): 10,000 bp
 
-### Method options
+- Method options
 
 > Method `1` corresponds to *[Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392)*
 > 
