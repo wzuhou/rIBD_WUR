@@ -16,7 +16,7 @@ setwd(system("pwd",intern=T))
 ##Plot rIBD #
 #############
 rIBD<- read.table(args[1],sep="\t",header = F)
-if (nrow(rIBD) == 5){
+if (ncol(rIBD) == 5){
 	names(rIBD) <- c("CHR","START","END","R_IBD","WR_IBD")
 	method=1
 } else {
