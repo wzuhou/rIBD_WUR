@@ -68,7 +68,7 @@ Rscript plot_rIBD.R rIBD_DrFwB_DB_DrFw 6 10000000 11000000
 ```
 
 **Arguments:**
-1. Input rIBD file (Example: rIBD_DrFwB_DB_DrFw. **NB**: Whole genome output or a songle chromosome output? Both would be possible.)
+1. Input rIBD file (Example: rIBD_DrFwB_DB_DrFw. **NB**: Whole genome output or a single chromosome output? Both are possible.)
 2. Chromosome of interest
 3. Start position for region to be highlighted (in bp)
 4. End position for region to be highlighted (in bp)
