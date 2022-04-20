@@ -33,7 +33,7 @@
 
 ### Example
 ```bash
-python rIBD.py -i Example/test_chr6.ibd -A Example/List.DrFwB -B Example/List.DB -C Example/List.DrFw -o rIBD_DrFwB_DB_DrFw -W 20000 -S 10000 -M 1
+python rIBD_pd.py -i Example/test_chr6.ibd -A Example/List.DrFwB -B Example/List.DB -C Example/List.DrFw -o rIBD_DrFwB_DB_DrFw -W 20000 -S 10000 -M 1
 #expected output: Example/rIBD_DrFwB_DB_DrFw
 ```
 
@@ -43,8 +43,8 @@ Example breeds:DrFw, DrFwB, DB
 2. Three list files(A,B,C): A: List.DrFwB, B: List.DB , C: List.DrFw
 
 - Parameters
-1. Using the method option: 1, which corresponds to *[Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392)*
-2. Window size: 20,000 bp; step size: 10,000 bp
+1. Window size (-W): 20,000 bp; 
+2. Step size (-S): 10,000 bp
 
 - Output format  
 1.Chr 2.Start 3.End 4.rIBD 5. weighted rIBD
