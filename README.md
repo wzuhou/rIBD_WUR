@@ -46,7 +46,7 @@ Example breeds:DrFw, DrFwB, DB
 1. Using the method option: 1, which corresponds to *[Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392)*
 2. Window size: 20,000 bp; step size: 10,000 bp
 
-- Output format
+- Output format  
 1.Chr 2.Start 3.End 4.rIBD 5. weighted rIBD
 
 ### Steps in the code
