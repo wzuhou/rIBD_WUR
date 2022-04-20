@@ -16,7 +16,7 @@ setwd(system("pwd",intern=T))
 ##Plot rIBD #
 #############
 rIBD<- read.table(args[1],sep="\t",header = F)
-names(rIBD) <- c("CHR","START","END","R_IBD")
+names(rIBD) <- c("CHR","START","END","R_IBD","WR_IBD")
 
 #########################
 #Zoom in Chr of interest#
@@ -33,6 +33,15 @@ gg2 <- ggplot(rIBD ) +
   geom_vline(xintercept =c(sline,eline),colour="#990000",linetype='dashed',alpha=0.7)+
   theme_light()+theme(axis.title.y = element_text(size=10))
 ggsave(paste0("Chr",Chr,"_RIBD.pdf"),gg2,width = 5,height = 2.5)
+
+gg2 <- ggplot(rIBD ) +  
+  geom_col(size=5,fill="black",aes(x=START/1000000, y=WR_IBD))+
+  scale_x_continuous(breaks =waiver(),expand = c(0, 0))+
+  #scale_y_continuous(breaks =waiver(),limits = c(-1,1),expand = c(0, 0))+
+  labs(title= NULL,x=paste0("Position on Chr ",Chr," (Mb)"),y="rIBD")+
+  geom_vline(xintercept =c(sline,eline),colour="#990000",linetype='dashed',alpha=0.7)+
+  theme_light()+theme(axis.title.y = element_text(size=10))
+ggsave(paste0("Chr",Chr,"_WRIBD.pdf"),gg2,width = 5,height = 2.5)
 
 ########################
 # whole genome overview#
