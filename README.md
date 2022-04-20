@@ -49,6 +49,7 @@ Example breeds:DrFw, DrFwB, DB
 ### Method options
 
 > Method `1` corresponds to *[Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392)*
+> 
 > Method `2` computed the weighted cIBD in each window 
 
 - Output format  
