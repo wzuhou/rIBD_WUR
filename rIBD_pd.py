@@ -2,7 +2,7 @@
 """
 Author: Langqing Liu & Zhou Wu
 
-usage: python rIBD_pd.py -i example/Tibetan-Zebu-Yak.Chr28.beagle.ibd -A example/Tibetan.list -B example/Zebu.list -C example/Yak.list -o Tibetan-Zebu-Yak.Chr28 -W 20000 -S 10000 -M Mirte (or Weighted)
+usage: python rIBD_pd.py -i Example/test_chr6.ibd -A Example/List.DrFwB -B Example/List.DB -C Example/List.DrFw -o rIBD_DrFwB_DB_DrFw -W 20000 -S 10000 -M 1 (or 2)
 """
 from __future__ import division
 import sys, getopt
@@ -40,7 +40,7 @@ def main(argv):
         elif opt in ("-B", "--B_pop_list"):
             B_pop_list = arg
         elif opt in ("-C", "--C_pop_list"):
-            O_pop_list = arg
+            C_pop_list = arg
         elif opt in ("-W", "--windowsize"):
             Window = arg
         elif opt in ("-S", "--stepsize"):
@@ -49,7 +49,7 @@ def main(argv):
             Method = arg
     print('Input file is :', inputfile)
     print('Output file is :', outputfile)
-    print('Method file is :', Method)
+    print('Method is :', Method)
     return inputfile,outputfile,A_pop_list,B_pop_list,C_pop_list,Window,Step,Method
 
 def read_ibd(inputfile,A_pop_list,B_pop_list,C_pop_list):
@@ -60,13 +60,14 @@ def read_ibd(inputfile,A_pop_list,B_pop_list,C_pop_list):
     C_pop=pd.read_csv(C_pop_list,sep='\t',header=None)
     C_pop_list=C_pop[0].values.tolist()
     ibd=pd.read_csv(inputfile,sep='\t',header=None)
-    ibd_AB=ibd.loc[((ibd[0].isin(A_pop_list)) & (ibd[2].isin(B_pop_list)))|((ibd[2].isin(A_pop_list)) & (ibd[1].isin(B_pop_list))),[4,5,6]]
-    ibd_AC=ibd.loc[((ibd[0].isin(A_pop_list)) & (ibd[2].isin(C_pop_list)))|((ibd[2].isin(A_pop_list)) & (ibd[1].isin(C_pop_list))),[4,5,6]]
+    ibd_AB=ibd.loc[((ibd[0].isin(A_pop_list)) & (ibd[2].isin(B_pop_list)))|((ibd[2].isin(A_pop_list)) & (ibd[0].isin(B_pop_list))),[4,5,6]]
+    ibd_AC=ibd.loc[((ibd[0].isin(A_pop_list)) & (ibd[2].isin(C_pop_list)))|((ibd[2].isin(A_pop_list)) & (ibd[0].isin(C_pop_list))),[4,5,6]]
     Chrsize = max(ibd[6])
     Chrname = ibd[4][1]
     nA = len(A_pop_list)
     nB = len(B_pop_list)
     nC = len(C_pop_list)
+    #print(type(ibd_AB.values.tolist()))
     ibd_AB = pybedtools.BedTool(ibd_AB.values.tolist())
     ibd_AC = pybedtools.BedTool(ibd_AC.values.tolist())
     return ibd_AB,ibd_AC,Chrname,Chrsize,nA,nB,nC
@@ -78,16 +79,17 @@ def genome_windows(Chrname,Chrsize,Window,Step):
     #print(nWindow)
     chr_windows = []
     for i in range(1,nWindow):
-        chr_windows.append((Chrname,Start,End))
+        chr_windows.append([Chrname,Start,End])
         Start = int(Start) + int(Step)
         End = int(End) + int(Step)
-    chr_windows = pybedtools.BedTool(chr_windows)
-    chr_windows.saveas('w20ks10k.bed')
+    chr_windows = pd.DataFrame(chr_windows)
+    chr_windows = pybedtools.BedTool(chr_windows.values.tolist())
+    chr_windows.saveas("w"+str(Window)+"s"+str(Step)+".bed")
     return chr_windows
 
 def bedtools_coverage(chr_windows,ibd_AB,ibd_AC):
     nibd_AB = chr_windows.coverage(ibd_AB)
-    nibd_AO = chr_windows.coverage(ibd_AC)
+    nibd_AC = chr_windows.coverage(ibd_AC)
     #print(nibd_AB.head(3))
     nibd_AB.saveas('AB.bed')
     nibd_AC.saveas('AC.bed')
@@ -109,11 +111,13 @@ def calculate_ribd(nibd_AB,nibd_AC,nA,nB,nC,outputfile):
         w_ribd=(sAB*fAB/(nA*nB*4)) - (sAC*fAC/(nA*nC*4))
         #print("\t".join([Chr,Start,End,str(ribd),str(w_ribd)]))
         f.write("\t".join([Chr,Start,End,str(ribd),str(w_ribd)]))
+        f.write("\n")
     f.close()
 
 def bedtools_genomecov(chr_windows,ibd_AB,ibd_AC,Chrname,Chrsize):
-    ibd_AB_cov=ibd_AB.genome_coverage(bga=True, genome={Chrname:(1,Chrsize)})
-    ibd_AC_cov=ibd_AC.genome_coverage(bga=True, genome={Chrname:(1,Chrsize)})
+    #print(Chrsize)
+    ibd_AB_cov=ibd_AB.genome_coverage(bga=True, genome={str(Chrname):(1,Chrsize)})
+    ibd_AC_cov=ibd_AC.genome_coverage(bga=True, genome={str(Chrname):(1,Chrsize)})
     ibd_AB_cov.saveas('AB.bed')
     ibd_AC_cov.saveas('AC.bed')
     ibd_AB_cov_pd=pybedtools.BedTool.to_dataframe(ibd_AB_cov)
@@ -147,6 +151,7 @@ def calculate_ribd_gcov(sum_ibd,nA,nB,nC,outputfile):
         ribd=(i[3]/(nA*nB*4)) - (i[4]/(nA*nC*4))
         #print("\t".join([i[0],i[1],i[2],str(ribd)]))
         f.write("\t".join([i[0],i[1],i[2],str(ribd)]))
+        f.write("\n")
     f.close()
     return
 
@@ -162,7 +167,7 @@ if __name__ == "__main__":
     #print(Window)
     #print(Step)
     chr_windows = genome_windows(Chrname,Chrsize,Window,Step)
-    if Method == "Mirte":
+    if Method == "1":
         nibd_AB,nibd_AC=bedtools_coverage(chr_windows,ibd_AB,ibd_AC)
         calculate_ribd(nibd_AB,nibd_AC,nA,nB,nC,outputfile)
     else:
