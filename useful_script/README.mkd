@@ -1,7 +1,12 @@
-FOR THE USE OF IBD PAIR-WISE COMPARISON
-INPUT:
+## FOR THE USE OF IBD PAIR-WISE COMPARISON
+
+### INPUT:
+
+```bash
 sh ibd_pipeline.sh DB BarnevB
-OUTPUT:
+```
+### OUTPUT:
+
 ibd.breed1_breed2 + 3 additional files
 _count
 _size
