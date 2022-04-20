@@ -35,7 +35,7 @@
 ### Example
 ```bash
 python rIBD_pd.py -i Example/test_chr6.ibd -A Example/List.DrFwB -B Example/List.DB -C Example/List.DrFw -o rIBD_DrFwB_DB_DrFw -W 20000 -S 10000 -M 1
-#expected output: Example/rIBD_DrFwB_DB_DrFw
+#expected output, see: Example/rIBD_DrFwB_DB_DrFw
 ```
 
 Example breeds:DrFw, DrFwB, DB
