@@ -60,10 +60,10 @@ Example breeds:DrFw, DrFwB, DB
 ## Visualization of the result
 ### Example to plot
 
-Here we highlight the candidate region on Chromosome 1: 34199000-34363000
+Here we highlight the candidate region on Chromosome 6: 10000000-11000000
 
 ```bash
-Rscript plot_rIBD.R rIBD_DrFwB_DB_DrFw 1 34199000 34363000
+Rscript plot_rIBD.R rIBD_DrFwB_DB_DrFw 6 10000000 11000000
 ```
 
 **Arguments:**
