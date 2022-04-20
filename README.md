@@ -46,14 +46,13 @@ Example breeds:DrFw, DrFwB, DB
 1. Window size (-W): 20,000 bp; 
 2. Step size (-S): 10,000 bp
 
-- Output format  
-1.Chr 2.Start 3.End 4.rIBD 5. weighted rIBD
-
-### Steps in the code
 ### Method options
 
 - Method `1` corresponds to *[Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392)*
 - Method `2` computed the weighted cIBD in each window 
+
+- Output format  
+1.Chr 2.Start 3.End 4.rIBD 5. weighted rIBD
 
 ---
 
