@@ -1,6 +1,7 @@
 # rIBD_WUR
 
 **Authors: Zhou Wu & Langqing Liu**
+**Update: 2022/04/20**
 
 ## What does this repository do?
 - Calcuate the relative haplotype sharing (rIBD) between three populations(A, B and C)
