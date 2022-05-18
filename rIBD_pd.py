@@ -107,8 +107,8 @@ def calculate_ribd(nibd_AB,nibd_AC,nA,nB,nC,outputfile):
         fAB=float(nibd_AB[i][6])
         sAC=float(nibd_AC[i][3])
         fAC=float(nibd_AC[i][6])
-        ribd=(sAB/(nA*nB*4)) - (sAC/(nA*nC*4))
-        w_ribd=(sAB*fAB/(nA*nB*4)) - (sAC*fAC/(nA*nC*4))
+        ribd=(sAB/(nA*nB*4)) - (sAC/(nA*nC*4)) #original rIBD desribed by Bosse et al
+        w_ribd=(sAB*fAB/(nA*nB*4)) - (sAC*fAC/(nA*nC*4)) #rIBD weighted by the coverage of shared haplotypes
         #print("\t".join([Chr,Start,End,str(ribd),str(w_ribd)]))
         f.write("\t".join([Chr,Start,End,str(ribd),str(w_ribd)]))
         f.write("\n")
