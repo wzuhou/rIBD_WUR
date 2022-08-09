@@ -24,9 +24,11 @@
 
 We would appreciate it if you could cite this paper if you used the codes from this repository:
 
-Wu Z, Bortoluzzi C, Derks MFL, Liu L, Bosse M, Hiemstra SJ, Groenen MAM, Crooijmans RPMA. 
+Wu Z, Bortoluzzi C, Derks MFL, Liu L, Bosse M, Hiemstra SJ, Groenen MAM, Crooijmans RPMA. 2020.Evol. Appl.eva.13183. 
+
 [Heterogeneity of a dwarf phenotype in Dutch traditional chicken breeds revealed by genomic analyses.](https://doi.org/10.1111/eva.13183)
-2020.Evol. Appl.eva.13183. https://doi.org/10.1111/eva.13183
+
+
 
 ## rIBD between population A,B, and C
 <p align="center">
