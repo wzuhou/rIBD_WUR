@@ -12,13 +12,6 @@
 >
 > Adopted from *[Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392)*
 
-- Citation
-
-If you use the code in this repository please cite:
-Wu Z, Bortoluzzi C, Derks MFL, Liu L, Bosse M, Hiemstra SJ, Groenen MAM, Crooijmans RPMA. 
-[Heterogeneity of a dwarf phenotype in Dutch traditional chicken breeds revealed by genomic analyses.](https://doi.org/10.1111/eva.13183)
-2020.Evol. Appl.eva.13183. https://doi.org/10.1111/eva.13183
-
 - Codes in this repository
 
 `Beagle_phasing_IBD_calling.sh` This code shows an example of using Beagle to perform the **phasing** and IBD calling
@@ -26,6 +19,14 @@ Wu Z, Bortoluzzi C, Derks MFL, Liu L, Bosse M, Hiemstra SJ, Groenen MAM, Crooijm
 `rIBD_pd.py` This code shows an example of using the python code to compute the **rIBD**
 
 `plot_rIBD.R` This code shows an example of **plotting** the outcome of the pyton codes 
+
+- Citation
+
+We would appreciate it if you could cite this paper if you used the codes from this repository:
+
+Wu Z, Bortoluzzi C, Derks MFL, Liu L, Bosse M, Hiemstra SJ, Groenen MAM, Crooijmans RPMA. 
+[Heterogeneity of a dwarf phenotype in Dutch traditional chicken breeds revealed by genomic analyses.](https://doi.org/10.1111/eva.13183)
+2020.Evol. Appl.eva.13183. https://doi.org/10.1111/eva.13183
 
 ## rIBD between population A,B, and C
 <p align="center">
