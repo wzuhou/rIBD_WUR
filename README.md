@@ -12,6 +12,13 @@
 >
 > Adopted from *[Bosse, M. et al.(2014)](https://www.nature.com/articles/ncomms5392)*
 
+- Citation
+
+If you use the code in this repository please cite:
+Wu Z, Bortoluzzi C, Derks MFL, Liu L, Bosse M, Hiemstra SJ, Groenen MAM, Crooijmans RPMA. 
+[Heterogeneity of a dwarf phenotype in Dutch traditional chicken breeds revealed by genomic analyses.](https://doi.org/10.1111/eva.13183)
+2020.Evol. Appl.eva.13183. https://doi.org/10.1111/eva.13183
+
 - Codes in this repository
 
 `Beagle_phasing_IBD_calling.sh` This code shows an example of using Beagle to perform the **phasing** and IBD calling
