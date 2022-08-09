@@ -20,7 +20,8 @@
 
 `plot_rIBD.R` This code shows an example of **plotting** the outcome of the pyton codes 
 
-- Citation
+
+## Citation
 
 We would appreciate it if you could cite this paper if you used the codes from this repository:
 
