@@ -3,7 +3,7 @@
 **Authors: Zhou Wu & Langqing Liu**
 **Update: 2022/04/20**
 
-## What does this repository do?
+## What does it do?
 - Calcuate the relative haplotype sharing (rIBD) between three populations(A, B and C)
 
 > Normalized IBD for one  group: nIBD=cIBD/tIBD (where cIBD=count of all haplotypes IBD between A and one group (B or C) and tIBD=total pairwise comparisons between A and one  group).
@@ -23,13 +23,14 @@
 
 ## Citation
 
-We would appreciate it if you could cite this paper if you used the codes from this repository:
+If you use codes from this repository, please cite the following papers:
 
 Wu Z, Bortoluzzi C, Derks MFL, Liu L, Bosse M, Hiemstra SJ, Groenen MAM, Crooijmans RPMA. 2020.Evol. Appl.eva.13183. 
 
 [Heterogeneity of a dwarf phenotype in Dutch traditional chicken breeds revealed by genomic analyses.](https://doi.org/10.1111/eva.13183)
 
 
+Wu, Z., Bosse, M., Rochus, C.M. et al. Genomic insight into the influence of selection, crossbreeding, and geography on population structure in poultry. Genet Sel Evol 55, 5 (2023). [https://doi.org/10.1186/s12711-022-00775-x](https://doi.org/10.1186/s12711-022-00775-x)
 
 ## rIBD between population A,B, and C
 <p align="center">
