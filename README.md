@@ -25,10 +25,7 @@
 
 If you use codes from this repository, please cite the following papers:
 
-Wu Z, Bortoluzzi C, Derks MFL, Liu L, Bosse M, Hiemstra SJ, Groenen MAM, Crooijmans RPMA. 2020.Evol. Appl.eva.13183. 
-
-[Heterogeneity of a dwarf phenotype in Dutch traditional chicken breeds revealed by genomic analyses.](https://doi.org/10.1111/eva.13183)
-
+Wu Z, Bortoluzzi C, Derks MFL, Liu L, Bosse M, Hiemstra SJ, Groenen MAM, Crooijmans RPMA. Heterogeneity of a dwarf phenotype in Dutch traditional chicken breeds revealed by genomic analyses.2020.Evol. Appl.eva.13183. [https://doi.org/10.1111/eva.13183](https://doi.org/10.1111/eva.13183)
 
 Wu, Z., Bosse, M., Rochus, C.M. et al. Genomic insight into the influence of selection, crossbreeding, and geography on population structure in poultry. Genet Sel Evol 55, 5 (2023). [https://doi.org/10.1186/s12711-022-00775-x](https://doi.org/10.1186/s12711-022-00775-x)
 
