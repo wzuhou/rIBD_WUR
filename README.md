@@ -77,7 +77,7 @@ Example breeds:DrFw, DrFwB, DB
 
 You can try to use .fai to make this file. e.g. CHR START END
 ```sh
-awk '{print ,0,}' *.fasta.fai > CHR_coords.bed
+awk '{print $1,0,$2}' *.fasta.fai > CHR_coords.bed
 ```
 
 >6       0       36365699
