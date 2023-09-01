@@ -63,7 +63,8 @@ Example breeds:DrFw, DrFwB, DB
 > 
 > Method `2` computed the weighted cIBD in each window 
 
-- Output format  
+- Output format
+- 
 1.Chr 2.Start 3.End 4.rIBD 5. weighted rIBD
 
 ## Bash alternative
@@ -79,10 +80,9 @@ You can try to use .fai to make this file. e.g. CHR START END
 
 ```sh
 awk '{print $1,0,$2}' *.fasta.fai > CHR_coords.bed
+6       0       36365699
+7       0       1640102
 ```
-
-> 6       0       36365699
-> 7       0       1640102
 
 ### Example
 
@@ -95,6 +95,7 @@ sh run_nIBD_pair.sh -i Example/test_chr6.ibd -A Example/List.DrFwB -B Example/Li
 ```
 
 - Output
+
 You will have 2 **nIBD** output files
 1. rIBD_DrFwB_DB_DrFw.List.DrFwB_List.DB.nibd
 2. rIBD_DrFwB_DB_DrFw.List.DrFwB_List.DrFw.nibd
@@ -103,6 +104,7 @@ To get rIBD simply follow this rIBD=nIBD</sub>AB</sub> – nIBD<sub>AC</sub>
 (We are considering to include this in the future, if you need help with this, do not hesitate to get in touch)
 
 - Output format
+
 "CHR","START","END","COUNT","BASE","WIN","COV_PERCENT","nIBD","WEIGHTED_nIBD"
 
 ---
