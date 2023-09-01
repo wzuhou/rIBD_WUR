@@ -67,7 +67,7 @@ Example breeds:DrFw, DrFwB, DB
 - 
 1.Chr 2.Start 3.End 4.rIBD 5. weighted rIBD
 
-## Bash alternative
+## Bash alternative(untested but fast)
 
 ### Dependence: 
 - bedtools (tested in v2.30.0)
