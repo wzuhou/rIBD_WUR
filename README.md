@@ -72,8 +72,10 @@ Example breeds:DrFw, DrFwB, DB
 ### Dependence: 
 - bedtools (tested in v2.30.0)
 
-**NOTE: this is an untested version to compute nIBD using bash scripts.**
+**NB: this is an untested version to compute nIBD using bash scripts.**
+
 **rIBD will need to be manually computated by simply rIBD=nIBD</sub>AB</sub> – nIBD<sub>AC</sub>**
+
 **A chromosome size file (CHR_coords.bed) is required for this run**
 
 You can try to use .fai to make this file. e.g. CHR START END
