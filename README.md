@@ -76,6 +76,7 @@ Example breeds:DrFw, DrFwB, DB
 **A chromosome size file (CHR_coords.bed) is required for this run**
 
 You can try to use .fai to make this file. e.g. CHR START END
+
 ```sh
 awk '{print $1,0,$2}' *.fasta.fai > CHR_coords.bed
 ```
