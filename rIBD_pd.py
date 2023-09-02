@@ -8,9 +8,10 @@ from __future__ import division
 import sys, getopt
 from sys import argv
 import subprocess
-import os.path
+import os
 import pandas as pd
 import pybedtools
+
 
 
 def main(argv):
@@ -62,28 +63,34 @@ def read_ibd(inputfile,A_pop_list,B_pop_list,C_pop_list):
     ibd=pd.read_csv(inputfile,sep='\t',header=None)
     ibd_AB=ibd.loc[((ibd[0].isin(A_pop_list)) & (ibd[2].isin(B_pop_list)))|((ibd[2].isin(A_pop_list)) & (ibd[0].isin(B_pop_list))),[4,5,6]]
     ibd_AC=ibd.loc[((ibd[0].isin(A_pop_list)) & (ibd[2].isin(C_pop_list)))|((ibd[2].isin(A_pop_list)) & (ibd[0].isin(C_pop_list))),[4,5,6]]
-    Chrsize = max(ibd[6])
-    Chrname = ibd[4][1]
+    #Chrsize = max(ibd[6])
+    #print(ibd_AB)
+    Chrname = ibd[4].unique().tolist()
+    Chrsize = ibd.groupby(4)[6].max().to_list()
     nA = len(A_pop_list)
     nB = len(B_pop_list)
     nC = len(C_pop_list)
     #print(type(ibd_AB.values.tolist()))
     ibd_AB = pybedtools.BedTool(ibd_AB.values.tolist())
     ibd_AC = pybedtools.BedTool(ibd_AC.values.tolist())
+    #print(ibd_AB)
     return ibd_AB,ibd_AC,Chrname,Chrsize,nA,nB,nC
 
 def genome_windows(Chrname,Chrsize,Window,Step):
-    Start = 1
-    End = int(Window)
-    nWindow=int(Chrsize)//int(Step)
-    #print(nWindow)
     chr_windows = []
-    for i in range(1,nWindow):
-        chr_windows.append([Chrname,Start,End])
-        Start = int(Start) + int(Step)
-        End = int(End) + int(Step)
+    for i in range(0,len(Chrname)):
+        print(Chrname[i])
+        Start = 1
+        End = int(Window)
+        nWindow=int(Chrsize[i])//int(Step)
+        #print(nWindow)
+        for j in range(1,nWindow):
+            chr_windows.append([Chrname[i],Start,End])
+            Start = int(Start) + int(Step)
+            End = int(End) + int(Step)
     chr_windows = pd.DataFrame(chr_windows)
     chr_windows = pybedtools.BedTool(chr_windows.values.tolist())
+    os.system("rm w"+str(Window)+"s"+str(Step)+".bed")
     chr_windows.saveas("w"+str(Window)+"s"+str(Step)+".bed")
     return chr_windows
 
@@ -91,6 +98,8 @@ def bedtools_coverage(chr_windows,ibd_AB,ibd_AC):
     nibd_AB = chr_windows.coverage(ibd_AB)
     nibd_AC = chr_windows.coverage(ibd_AC)
     #print(nibd_AB.head(3))
+    os.system("rm "+"AB.bed")
+    os.system("rm "+"AC.bed")
     nibd_AB.saveas('AB.bed')
     nibd_AC.saveas('AC.bed')
     return nibd_AB,nibd_AC
@@ -98,6 +107,7 @@ def bedtools_coverage(chr_windows,ibd_AB,ibd_AC):
 def calculate_ribd(nibd_AB,nibd_AC,nA,nB,nC,outputfile):
     #print(len(nibd_AB))
     #print(len(nibd_AC))
+    os.system(str(outputfile))
     f = open(outputfile,"a")
     for i in range(0,len(nibd_AB)):
         Chr=str(nibd_AB[i][0])
@@ -166,9 +176,13 @@ if __name__ == "__main__":
     #print(Chrsize)
     #print(Window)
     #print(Step)
+    #print(Chrname)
+    #exit()
     chr_windows = genome_windows(Chrname,Chrsize,Window,Step)
+    #exit()
     if Method == "1":
         nibd_AB,nibd_AC=bedtools_coverage(chr_windows,ibd_AB,ibd_AC)
+        #exit()
         calculate_ribd(nibd_AB,nibd_AC,nA,nB,nC,outputfile)
     else:
         sum_ibd=bedtools_genomecov(chr_windows,ibd_AB,ibd_AC,Chrname,Chrsize)
